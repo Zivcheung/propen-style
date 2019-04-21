@@ -1,0 +1,18 @@
+@import "mixins/bem";
+@import "common/var";
+
+
+@include b(header){
+    background-color:$--grey-3;
+
+    @include when(night-mode){
+        background-color:$--grey-10;
+    }
+    @include e(tag){
+        font-size:12px;
+        color:black;
+        @include m(night-mode){
+            color:white
+        }
+    }
+}
