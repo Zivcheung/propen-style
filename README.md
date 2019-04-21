@@ -13,5 +13,5 @@ the project use gulp to streamline the process of compiling scss.
     - gulp-sass
 
 ### cli-command 
-    "gulp watch" to start watching.
-    "gulp style" to manually compile scss.
+    "npm start" to start watching in devmode.
+    "npm run build" to manually compile production css.
