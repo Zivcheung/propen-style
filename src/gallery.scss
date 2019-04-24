@@ -1,0 +1,16 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+@include b(window-page-wp){
+  height:100%;
+  background-color:$--grey-3;
+}
+
+@include b(gallery-wall){
+  height:100%;
+  overflow-x:hidden;
+  @include e(scroll){
+    display:flex;
+    padding:0 300px;
+  }
+}

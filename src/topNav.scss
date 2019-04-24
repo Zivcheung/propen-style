@@ -1,0 +1,51 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+@mixin link($color){
+    cursor:pointer;
+    &:hover{
+        color:lighten($color,100%);
+    }
+}
+
+@include b(top-nav){
+    display:flex;
+    box-sizing:border-box;
+    height:50px;
+    padding:16px 0 0 0;
+    justify-content: space-between;
+    background-color:$--grey-9;
+    box-shadow:black;
+    color:$--grey-5;
+    @include e(logo){
+        @include link($--grey-1);
+        padding-left:10px;
+        font-family: 'Merriweather',serif;
+        font-size:$--font-size-medium;
+        color:$--grey-1;
+        span{
+            margin-top:-6px;
+            vertical-align: middle;
+            display:inline-block;
+            height:28px;
+            width:28px;
+            background:url("@assets/logo@2x.png") no-repeat center/contain;
+        }
+    }
+    @include e(manu){
+        @include e(manu-item){
+            display:inline-block;
+            padding:0 16px;
+            @include link($--grey-5);
+        }
+    }
+    
+    @include e(account){
+
+    }
+    @include e(account-link){
+        display:inline-block;
+        padding:0 12px;
+        @include link($--grey-5);        
+    }
+}

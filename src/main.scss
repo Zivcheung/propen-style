@@ -1,9 +1,47 @@
+@import "common/var";
+@import url('https://fonts.googleapis.com/css?family=Merriweather:900|Roboto');
+
+
+
+// full window adoption
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    height:100%;
+}
+
+// global style initialization 
 #app {
-    font-family: Helvetica, Arial, sans-serif;
+    height:100%;
+    font-family: Helvetica, Roboto,Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-    font-size:60px;
+    font-size:$--font-size-base;
+    color:$--grey-10;
+    h1{
+        font-size:$--font-size-super-large;
+    }
+    h2{
+        font-size:$--font-size-extra-large;
+    }
+    h3{
+        font-size:$--font-size-large;     
+    }
+    h4{
+        font-size:$--font-size-medium;  
+    }
+    body::-webkit-scrollbar {
+        width: 1em;
+    }
+     
+    body::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+     
+    body::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
 }

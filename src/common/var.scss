@@ -24,6 +24,7 @@ $--red-prim:#da0000 !default;
 
 //font size
 $--font-path: 'fonts' !default;
+$--font-size-super-large: 72px !default;
     /// fontSize|[主标题文字大小,Extra large font size,Extra large font size]|FontSize|0
 $--font-size-extra-large: 30px !default;
     /// fontSize|[标题文字大小,large font size,large font size]|FontSize|0
@@ -37,6 +38,13 @@ $--font-size-small: 13px !default;
     /// fontSize|[辅助文字大小,Extra small font size,Extra small font size]|FontSize|0
 $--font-size-extra-small: 12px !default;
 
+// responsive screen size
+$--screen-xl:1920px;
+$--screen-lg:1200px;
+$--screen-md:992px;
+$--screen-sm:768px;
+// $--screen-xs:768px;
 
 
-
+// transition
+$--transition-normal: ease-in-out;

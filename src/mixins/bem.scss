@@ -17,11 +17,14 @@ $E:null;
 @mixin e($element){
     $E:$element !global;
     $parent-block:&;
-    $currentSelector:#{$B+$element-separator+$E};
+    $currentSelector:"";
 
+    @each $e in $E{
+        $currentSelector:#{$currentSelector+'.'+$B+$element-separator+$e+','};
+    }
     @at-root {
         #{$parent-block}{
-            .#{$currentSelector}{
+            #{$currentSelector}{
                 @content;
             }
         } 

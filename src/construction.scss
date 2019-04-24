@@ -1,0 +1,13 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+@include b(construction){
+  img{
+    $size:200px;
+    display:block;
+    height:$size;
+    width:$size;
+    margin:200px auto 0;
+  }
+  font-size:$--font-size-extra-large;
+}

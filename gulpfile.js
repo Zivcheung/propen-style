@@ -5,6 +5,7 @@ let autoprefixer = require("autoprefixer");
 let cssnano = require("cssnano");
 let sourceMaps=require("gulp-sourcemaps");
 let discardComments=require("postcss-discard-comments")
+let aliases = require("gulp-style-aliases")
 let env = process.env.NODE_ENV;
 
 //every configuration is set to development mode by default
@@ -35,6 +36,11 @@ if(env=="production"){
 function style(){
     return (
         gulp.src(paths.src)
+            .pipe(aliases(
+                {
+                    '@assets':'../Interface/src/assets'
+                }
+            ))
             .pipe(sourceMaps.init())
             .pipe(sassLoader())
             .on("error",sassLoader.logError)
