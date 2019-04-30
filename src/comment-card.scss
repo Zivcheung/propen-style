@@ -1,0 +1,72 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+
+$card-size:240px;
+$avatar-size:32px;
+$comment-size:160px;
+@include b(comment-card){
+  position:absolute;
+  box-sizing: border-box;
+  width:$card-size;
+  height:$card-size;
+  padding:12px;
+  background-color:$--yellow-prim;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba($--grey-10,0.2), 0 -2px 4px rgba($--grey-10,0.2);
+  transition:.2s $--transition-ease-out;
+
+  @include e(head){
+    img{
+      vertical-align: middle;
+      height:$avatar-size;
+      width:$avatar-size;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  @include e(head-username){
+    display:inline-block;
+    vertical-align: middle;
+    padding-left:10px;
+  }
+
+  @include e(comment){
+    // width:$comment-size;
+    height:$comment-size;
+    margin-top:16px;
+    padding:0 12px;
+    overflow-x:none;
+    overflow-y:auto;
+    font-size:12px;
+  }
+
+  @include e(group,true){
+    position:relative;
+    margin-top:20px;
+    &::after{
+      content:'';
+      opacity:0;
+      position: absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      width:100%;
+      height:100%;
+      margin:auto;
+      outLine:4px dashed rgba($--cyan-signature,.8);
+      border-radius: 4px;
+      pointer-events: none;
+      transition:.2s;
+      pointer-events: none;
+    }
+    @include when(dragenter){
+      &::after{
+        content:'';
+        display:block;
+        opacity:1;
+      }
+    }
+  }
+}

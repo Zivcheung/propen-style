@@ -1,0 +1,64 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+@include b(radar-nav){
+  display:flex;
+  justify-content: center;
+  width:100%;
+  height:calc(100% - 50px);
+  background-color:$--grey-1;
+
+  @include e(content){
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:10;
+    display:block;
+    width:16px;
+    height:16px;
+    margin:-8px -8px;
+    transform-origin: center;
+
+    &:hover{
+      @include e(content-title){
+        position:absolute;
+        top:0;
+        left:200%;
+        box-sizing: border-box;
+        display:block;
+        padding:10px 10px 10px 10px;
+        width:140px;
+        border-radius: 0 4px 4px 4px;
+        background-color:$--red-prim;
+        color:white;
+        font-weight:900;
+        text-align: center;
+        &:before{
+          $triangle-size:10px;
+          content:'';
+          position: absolute;
+          top:0;
+          left:0;
+          display:block;
+          width:0;
+          height:0;
+          border:$triangle-size solid transparent;
+          border-right:$triangle-size solid $--red-prim;
+          transform-origin:top left;
+          transform: translate(-100%,0);
+        }
+      }
+    }
+  }
+
+  @include e(content-title){
+    display:none;
+  }
+
+  @include e(instruction){
+    position:absolute;
+    display:block;
+    height:20px;
+    text-align:center;
+  }
+}

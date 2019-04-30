@@ -1,6 +1,10 @@
 @import "common/var.scss";
 @import "mixins/bem.scss";
 
+
+$card-width: 260px;
+$card-height: 360px;
+$open-offset:40px;
 @include b(gallery-card){
   position:relative;
   flex:0 0 auto;
@@ -15,15 +19,22 @@
   }
 
   @include when(open){
-    @include e('cover-right'){
-      transform: translateX(100%);
-      box-shadow: -4px 0 6px 0 rgba(0,0,0,.1);
+    margin:0 300px;
 
+    @include e(cover){
+      pointer-events: none;
+    }
+    @include e('cover-right'){
+      transform: translateX(($card-width/2 + $open-offset));
+      box-shadow: -4px 0 6px 0 rgba(0,0,0,.1);
     }
     @include e('cover-left'){
-      transform: translateX(-100%);
+      transform: translateX(-($card-width/2 + $open-offset));
       box-shadow: 4px 0 6px 0 rgba(0,0,0,.1);
 
+    }
+    @include e(abstract){
+      opacity:1;
     }
   }
 
@@ -64,14 +75,16 @@
   @include e('abstract'){
     position:absolute;
     top:0;
-    left:0;
+    left:-$open-offset;
+    opacity:0;
     box-sizing:border-box;
-    width:100%;
+    width:($card-width + $open-offset*2);
     height:100%;
-    padding:30px 20px 20px;
+    padding:30px 40px 20px;
     background-color:$--grey-1;
     text-align: center;
     border-radius: 4px;
+    transition:0.3s $--transition-normal;
   }
   @include e('abstract-author'){
     padding:20px 0;
@@ -82,6 +95,10 @@
     height:60%;
     text-align:left;
     text-overflow: ellipsis;
+  }
+
+  @include e(enter-btn){
+    margin:10px auto 0;
   }
 
 }

@@ -14,7 +14,7 @@ $--grey-10:#000000 !default;
 
 // color pallets
     ///signature
-$--cyan-signature:#1fdfef;
+$--cyan-signature:#31e6c2;
     ///primary
 $--blue-prim:#0075ff !default;
 $--yellow-prim:#ffbe00 !default;
@@ -30,8 +30,9 @@ $--font-size-extra-large: 30px !default;
     /// fontSize|[标题文字大小,large font size,large font size]|FontSize|0
 $--font-size-large: 24px !default;
     /// fontSize|[小标题文字大小,Medium font size,Medium font size]|FontSize|0
-$--font-size-medium: 16px !default;
+$--font-size-medium-large: 20px !default;
     /// fontSize|[正文文字大小,base font size,base font size]|FontSize|0
+$--font-size-medium: 16px !default;
 $--font-size-base: 14px !default;
     /// fontSize|[正文（小）文字大小,small font size,small font size]|FontSize|0
 $--font-size-small: 13px !default;
@@ -48,3 +49,6 @@ $--screen-sm:768px;
 
 // transition
 $--transition-normal: ease-in-out;
+$--transition-ease-in: cubic-bezier(.43,.01,.91,.58);
+$--transition-ease-out: cubic-bezier(0,.53,.68,.99);
+

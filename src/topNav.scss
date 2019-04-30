@@ -9,6 +9,8 @@
 }
 
 @include b(top-nav){
+    position: relative;
+    z-index:100;
     display:flex;
     box-sizing:border-box;
     height:50px;

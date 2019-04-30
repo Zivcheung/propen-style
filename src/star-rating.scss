@@ -1,0 +1,23 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+
+@include b(star-rating){
+  display: inline-block;
+  line-height:20px;
+  vertical-align: middle;
+  
+
+  @include e(svg){
+    height:15px;
+    width:100px;
+  }
+
+  @include e(star){
+    fill:$--grey-7;
+    @include when(ticked){
+      fill:$--orange-prim;
+    }
+  }
+  
+}

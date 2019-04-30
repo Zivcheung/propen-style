@@ -14,7 +14,7 @@ $E:null;
     }
 }
 
-@mixin e($element){
+@mixin e($element,$rootFlag:false){
     $E:$element !global;
     $parent-block:&;
     $currentSelector:"";
@@ -22,13 +22,22 @@ $E:null;
     @each $e in $E{
         $currentSelector:#{$currentSelector+'.'+$B+$element-separator+$e+','};
     }
-    @at-root {
-        #{$parent-block}{
+    @if $rootFlag == true {
+        @at-root {
             #{$currentSelector}{
                 @content;
             }
-        } 
-    } 
+        }
+    } @else{
+        @at-root {
+            #{$parent-block}{
+                #{$currentSelector}{
+                    @content;
+                }
+            } 
+        }
+    }
+    
 }
 
 @mixin m($modifier){
