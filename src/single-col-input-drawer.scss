@@ -1,0 +1,16 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+@include b('single-col-input-drawer'){
+  padding:60px 40px 10px;
+
+  // @include e(input){
+  //   margin:8px 0 16px;
+  // }
+  @include e(select){
+    width:100%;
+  }
+  @include e(button){
+    margin:30px 40px 0 0;
+  }
+}

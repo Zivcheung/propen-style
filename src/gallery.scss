@@ -1,11 +1,6 @@
 @import "common/var.scss";
 @import "mixins/bem.scss";
 
-@include b(window-page-wp){
-  height:100%;
-  background-color:$--grey-3;
-
-}
 
 @include b(gallery-wall){
   position: relative;

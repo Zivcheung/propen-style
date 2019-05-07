@@ -1,7 +1,9 @@
 @import "common/var.scss";
 @import "mixins/bem.scss";
+@import "mixins/common.scss";
 
 @include b(btn){
+  @include button;
   box-sizing:border-box;
   display:inline-block;
   text-align:center;
@@ -11,14 +13,6 @@
   line-height:32px;
   font-size:$--font-size-small;
   border-radius:2px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition:0.15s $--transition-normal;
-  cursor: pointer;
-  &:hover{
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-1px);
-    background-color:darken($--grey-8,10%);
-  }
 
   @include m(normal){
     background-color:$--grey-8;

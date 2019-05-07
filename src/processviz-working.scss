@@ -1,0 +1,53 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+$node-size:16px;
+@include b(processviz-working){
+  position:relative;
+  width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  background-color: rgba($--grey-3,.6);
+  
+  
+  @include e(method-control,true){
+    position:absolute;
+    top:0;
+    left:0;
+
+    .method{
+      position:absolute;
+      width:180px;
+      margin-top:-1em;
+      padding-left:40px;
+      font-size: $--font-size-medium;
+    }
+  }
+
+  @include e(document-nodes-wp){
+    position:absolute;
+    left:0;
+    top:0;
+    background:yellow;
+  }
+  @include e(document-node){
+    position:absolute;
+    top:0;
+    left:0;
+    box-sizing: border-box;
+    width:$node-size;
+    height:$node-size;
+    margin-top:-$node-size / 2;
+    margin-left:-$node-size / 2;
+    border-radius: 50%;
+    background-color:red;
+    box-shadow: 0 0 6px red;
+    cursor: pointer;
+    
+    @include m('compiled'){
+      background-color:rgba(0,0,0,0);
+      border:4px solid red;
+    }
+  }
+  
+}

@@ -40,6 +40,11 @@ body {
         font-weight:bold;    
     }
 }
+@include b(window-page-wp){
+    height:100%;
+    background-color:$--grey-3;
+  
+}
 
 @include b(paragraph){
     margin:20px;
@@ -47,4 +52,10 @@ body {
     font-size: $--font-size-medium-large;
     font-family: PingFang,"Times New Roman",Times,serif;
     color:rgba($--grey-10,0.84);
+}
+
+.el-form-item--small .el-form-item__label{
+    color: $--grey-9;
+    font-size: $--font-size-small;
+    line-height: 18px;
 }

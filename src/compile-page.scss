@@ -1,0 +1,18 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+@include b(compile-page){
+
+  @include e(workingspace-editor,true){
+    box-sizing:border-box;
+    width:70%;
+    height:100%;
+    margin:auto;
+  }
+
+  @include e(file-operation){
+    position:absolute;
+    top:40px;
+    right:40px;
+  }
+}

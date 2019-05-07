@@ -1,0 +1,79 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+
+$insertmenu-height:32px;
+@include b(document-editor){
+  position:relative;
+  height:90%;
+  padding-top:50px;
+  @include e(editor){
+    outline:none;
+  }
+
+  @include e(scroll){
+    height:80%;
+  }
+
+  // insert menu
+  @include e(insertmenu){
+    visibility:hidden;
+    position:absolute;
+    top:0;
+    right:20px;
+    display:flex;
+    height:$insertmenu-height;
+    align-items: center;
+  }
+  @include e(insertmenu-wp){
+    position:absolute;
+    z-index:100;
+    overflow:hidden;
+    width:$insertmenu-height;
+    height:$insertmenu-height;
+    border-radius:$insertmenu-height;
+    border: 1px solid $--grey-7;
+    color:$--grey-9;
+    background-color:white;
+    transition: 0.25s;
+      @include when(open){
+        width:240px;
+      @include e(insertmenu){
+        visibility:visible;
+      }
+      @include e(insertmenu-insertbtn){
+        transform-origin: center;
+        transform:rotate(45deg);
+      }
+      @include e(insertmenu-btn){
+        opacity:1;
+        @for $i from 1 through 5{
+          &:nth-child(#{$i}){
+            transition:.1s $--transition-ease-in;
+            transition-delay: #{(.05 * (6 - $i)) +'s'};
+          }
+        }
+      }
+    }
+  }
+
+  @include e(insertmenu-insertbtn){
+    width:$insertmenu-height;
+    line-height:$insertmenu-height + 2px;
+    text-align:center;
+    font-size:.7 * $insertmenu-height;
+    cursor: pointer;
+    transition: .25s $--transition-ease-in;
+  }
+
+  @include e(insertmenu-btn){
+    opacity:0;
+    box-sizing: border-box;
+    font-size:.6 * $insertmenu-height;
+    border-radius:50%;
+    margin:0 8px;
+    text-align:center;
+    cursor: pointer;
+  }
+
+}
