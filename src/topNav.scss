@@ -19,6 +19,15 @@
     background-color:$--grey-9;
     box-shadow:black;
     color:$--grey-5;
+
+    // reset all el-button
+    .el-button {
+        display:block;
+        padding:0;
+        margin:0;
+        text-align:left;
+        color:white;
+    }
     @include e(logo){
         @include link($--grey-1);
         padding-left:10px;
@@ -43,11 +52,57 @@
     }
     
     @include e(account){
-
+        margin-right:40px;
     }
     @include e(account-link){
         display:inline-block;
         padding:0 12px;
         @include link($--grey-5);        
     }
+
+    @include e(account-avatar){
+        &:hover {
+            @include e(account-avatar-dropdown){
+                transform:translateY(0);
+                visibility: visible;
+                opacity: 1; 
+            }
+        }
+
+    }
+    @include e(account-avatar-img){
+        margin-top:-4px;
+        width: 28px;
+        height: 28px;
+
+        
+        img{
+            width:100%;
+            height:100%;
+            object-fit: contain;
+        }
+    }
+    @include e(account-avatar-dropdown){
+        position:absolute;
+        display:flex;
+        visibility: hidden;
+        flex-flow:column nowrap;
+        justify-content: space-between;
+        margin-left:-67px;
+        height: 100px;
+        width:114px;
+        padding:30px 10px 20px;
+        border-radius:4px;
+        background-color:$--grey-9;
+        opacity: 0;
+        transform:translateY(-2px);
+        transition: .2s $--transition-ease-out;
+        
+    }
+    @include e(dropdown-spacer){
+        width:100%;
+        height:2px;
+        background-color:rgba(white, .4);
+    }
+
 }

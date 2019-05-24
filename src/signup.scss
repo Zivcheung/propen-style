@@ -1,0 +1,38 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+@include b(signpage) {
+  background-color: $--grey-8;
+}
+@include b(signup) {
+  width: 400px;
+  padding: 50px 0 0 0;
+  margin:auto;
+
+  @include e(logo){
+    height:100px;
+    padding:60px 0;
+    background: url('~src/assets/propen_logo.svg') no-repeat center/contain;
+    color: $--grey-1;
+  }
+  @include e(form){
+    padding: 0 40px;
+    .el-form-item__label{
+      color:white;
+    }
+  }
+  @include e(submitbtn){
+    display:block;
+    width:200px;
+    margin:40px auto 0;
+    background-color:#22DCF2;
+    border-color:#22DCF2;
+    font-size:16px;
+  }
+  @include e(shortcutbtn){
+    display:block;
+    width:200px;
+    margin:10px auto 0;
+    color:$--cyan-signature;
+  }
+}

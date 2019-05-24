@@ -3,6 +3,7 @@
 
 
 @include b(audioplayer){
+  position: relative;
   display:flex;
   height:36px;
   width:100%;
@@ -15,7 +16,7 @@
   @include e(playbtn){
     margin-left:20px;
     height:30px;
-    width:30px;
+    width:20px;
     line-height:30px;
     color:$--grey-1;
     cursor: pointer;
@@ -25,9 +26,9 @@
   }
 
   @include e(volume){
-    margin-left:20px;
+    flex:right;
+    margin-right:10px;
     height:30px;
-    width:30px;
     line-height:30px;
     color:$--grey-2;
     cursor: pointer;
@@ -35,10 +36,60 @@
       color:$--cyan-signature;
     }
   }
-
+  // @include e(volumemenu){
+  //   // visibility: hidden;
+  //   position: absolute;
+  //   top:-80px;
+  //   height:20px;
+  //   width:8px;
+  //   background-color: $--grey-9;
+  //   margin-top:-3px;
+  //   margin-right:4px;
+  //   transform-origin: bottom;
+  //   border-radius: 6px;
+  //   transform: scaleX(0);
+  //   transition: .1s $--transition-ease-in;
+  //   // @include when(show){
+  //   //   visibility: visible;
+  //   //   width:80px;
+  //   // }
+  // }
+  // @include e(volumemenu-bar){
+  //   position:relative;
+  //   height:4px;
+  //   width:60px;
+  //   border-radius: 2px;
+  //   background-color:$--grey-1;
+  // }
+  // @include e(volumemenu-barfill){
+  //   position: absolute;
+  //   right:0;
+  //   height:4px;
+  //   width:20px;
+  //   border-radius: 2px;
+  //   background-color:$--cyan-signature;
+  // }
+  // @include e(volumemenu-nob){
+  //   position: absolute;
+  //   top:-3px;
+  //   right:0;
+  //   width:10px;
+  //   height:10px;
+  //   border-radius: 50%;
+  //   background-color:$--grey-1;
+  //   cursor: pointer;
+  // }
+  @include e(time){
+    width:90px;
+    padding:0 10px;
+    color:$--grey-1;
+  }
   @include e(progressbar){
     position:relative;
     width:calc(80% - 60px);
+    height:6px;
+    margin-right:20px;
+    cursor: pointer;
   }
   @include e(progressbar-bg){
     margin-top:1px;
@@ -55,5 +106,23 @@
     width:20px;
     background-color:$--cyan-signature;
     border-radius: 2px;
+  }
+  @include e(progressbar-buffer){
+    position:absolute;
+    top:0;
+    left:0;
+    height:4px;
+    width:200px;
+    background-color:$--grey-8;
+    border-radius: 2px;
+  }
+  @include e(progressbar-nob) {
+    position: absolute;
+    top:-4px;
+    left:0;
+    width:12px;
+    height:12px;
+    border-radius: 50%;
+    background-color: $--grey-1;
   }
 }

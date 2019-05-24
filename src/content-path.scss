@@ -1,0 +1,33 @@
+@import "common/var.scss";
+@import "mixins/bem.scss";
+
+$section-size: 10px;
+$page-size: 5px;
+@include b(contentpath){
+  @include e(section) {
+    display:inline-block;
+  }
+  @include e(section-spacer) {
+    display:inline-block;
+    width:$section-size;
+    height:$section-size;
+    background-color:$--grey-6;
+    border-radius: 50%;
+    margin:0 6px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  @include e(page) {
+    display:inline-block;
+    width:$page-size;
+    height:$page-size;
+    background-color:$--grey-6;
+    border-radius: 50%;
+    margin:0 6px;
+    vertical-align: middle;
+    cursor: pointer;
+    @include when(active){
+    background-color:$--red-prim;
+    }
+  }
+}
