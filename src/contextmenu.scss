@@ -3,6 +3,8 @@
 
 @include b(contextmenu){
   position:absolute;
+  z-index:888;
+  overflow:visible;
   box-sizing: border-box;
   width:135px;
   padding:12px 12px 10px;

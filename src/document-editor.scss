@@ -6,7 +6,6 @@ $insertmenu-height:32px;
 @include b(document-editor){
   position:relative;
   height:90%;
-  padding-top:50px;
   @include e(editor){
     outline:none;
   }

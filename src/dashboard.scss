@@ -76,4 +76,13 @@
       margin:40px 0 4px;
       font-size:12px;
    }
+
+  @include e(project-create){
+    box-sizing: border-box;
+    width: 300px;
+    padding:0 20px;
+  }
+  @include e(project-create-input){
+    min-width: 300px;
+  }
 }

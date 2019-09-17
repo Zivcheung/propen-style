@@ -2,13 +2,10 @@
 @import "mixins/bem.scss";
 
 @include b(compile-page){
-
-  @include e(workingspace-editor,true){
-    box-sizing:border-box;
-    width:70%;
-    height:100%;
-    margin:auto;
-  }
+  box-sizing:border-box;
+  width:70%;
+  height:100%;
+  margin: 100px auto 0;
 
   @include e(file-operation){
     position:absolute;

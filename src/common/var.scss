@@ -14,13 +14,14 @@ $--grey-10:#000000 !default;
 
 // color pallets
     ///signature
-$--cyan-signature:#31e6c2;
+$--cyan-signature:#13c1d8;
     ///primary
 $--blue-prim:#0075ff !default;
 $--yellow-prim:#ffbe00 !default;
 $--orange-prim:#ff4f00 !default;
 $--magenta-prim:#ea0a8a !default;
 $--red-prim:#da0000 !default;
+$--cold-gradient:linear-gradient(135deg, #09e485 0%,#0291e3 100%) !default;
 
 //font size
 $--font-path: 'fonts' !default;

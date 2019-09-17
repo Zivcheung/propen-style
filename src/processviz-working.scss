@@ -5,11 +5,18 @@ $node-size:16px;
 @include b(processviz-working){
   position:relative;
   width:100%;
-  overflow-x:auto;
+  // padding-bottom:40px;
   overflow-y:hidden;
-  background-color: rgba($--grey-3,.6);
   
-  
+  .simplebar-visible.simplebar-scrollbar:before {
+    background: $--cold-gradient;
+    opacity:1;
+  }
+  // .simplebar-track{
+  //   background-color: rgba($--grey-1, .8);
+  //   border-radius: 5px;
+  // }
+
   @include e(method-control,true){
     position:absolute;
     top:0;
@@ -21,6 +28,7 @@ $node-size:16px;
       margin-top:-1em;
       padding-left:40px;
       font-size: $--font-size-medium;
+      color: white;
     }
   }
 
@@ -40,8 +48,9 @@ $node-size:16px;
     margin-top:-$node-size / 2;
     margin-left:-$node-size / 2;
     border-radius: 50%;
-    background-color:red;
-    box-shadow: 0 0 6px red;
+    background:$--cold-gradient;
+    box-shadow: 1px 2px 4px $--grey-9;
+    border:2px solid rgb(195, 238, 255);
     cursor: pointer;
     
     @include m('compiled'){
@@ -50,4 +59,9 @@ $node-size:16px;
     }
   }
   
+  // style the header
+  @include e(headeraxies){
+    color:white;
+    font-size:$--font-size-base;
+  }
 }

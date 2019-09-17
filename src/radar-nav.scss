@@ -61,4 +61,16 @@
     height:20px;
     text-align:center;
   }
+  @include e(instruction-bg){
+    position:absolute;
+    top:-24px;
+    left:0;
+    z-index: -1;
+    display:block;
+    height:60px;
+    width:60px;
+    border-radius: 50%;
+    background-color:rgba(red,.7);
+    text-align:center;
+  }
 }

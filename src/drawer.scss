@@ -7,8 +7,9 @@
   
   @include e(backdrop,true){
     position:fixed;
-    z-index:100;
+    z-index:990;
     top:50px;
+    left:0;
     bottom:0;
     width:100%;
     height:100%;
@@ -18,7 +19,7 @@
   @include e(wp,true){
     position:fixed;
     top:50px;
-    z-index:200;
+    z-index:991;
     background-color:$--grey-1;
     box-shadow:-4px 0 10px rgba($--grey-10,.2);
   }
